@@ -37,11 +37,16 @@
   --spacing-6: 2.75rem; /* 44px */
   --spacing-7: 3rem; /* 48px */
 
+  /* hero image */
+  --hero-image-height-mobile: 14.5rem; /* 232px */
+  --hero-image-height-desktop: 20rem; /* 320px */
+
   /* Container */
-  --card-width-desktop: 25.75rem; /* 412px */
+  --card-width-desktop: 37.5rem; /* 600px */
 
   /* star icon */
   --star-icon-size-mobile: 1.25rem; /* 20px */
+  --star-icon-size-desktop: 2.125rem; /* 34px */
 
   /* plus icon */
   --plus-icon-size: 1.5rem; /* 24px */
@@ -50,13 +55,17 @@
   --minus-icon-size: 1.5rem; /* 24px */
 
   /* app top spacing */
-  --app-top-spacing: 8.875rem; /* 142px */
+  --app-top-spacing-mobile: 8.875rem; /* 142px */
+  --app-top-spacing-desktop: 10.5rem; /* 168px */
 
   /* Borders */
   --border-radius-small: 0.5rem; /* 8px */
   --border-radius: 1rem; /* 16px */
   --border-radius-large: 2rem; /* 32px */
   --border-radius-full: 50rem; /* 800px */
+
+  /* Shadows */
+  --shadow-small: 3px 10px 25px 4px rgba(0, 0, 0, 0.1);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -81,20 +90,22 @@ header {
   overflow: hidden;
   z-index: -1;
 }
-
-header img {
-  width: 100%;
+picture img {
+  height: var(--hero-image-height-mobile);
+  object-fit: cover;
   display: block;
+  width: 100%;
 }
 
 main {
   background-color: var(--white);
-  margin-block-start: var(--app-top-spacing);
+  margin-block-start: var(--app-top-spacing-mobile);
   margin-inline-start: var(--spacing-2);
   margin-inline-end: var(--spacing-2);
   padding: var(--spacing-2);
   padding-block-end: 0;
   border-radius: var(--border-radius-small);
+  box-shadow: var(--shadow-small);
 }
 
 .title {
@@ -108,7 +119,7 @@ main {
 }
 
 .faq {
-  border-block-end: 2px solid hsl(240, 2%, 91%);
+  border-block-end: 1px solid var(--purple-100);
 }
 
 .faq:last-of-type {
@@ -143,4 +154,47 @@ main {
 
 .hidden {
   display: none;
+}
+
+/* Styles for desktop */
+@media (min-width: 48rem) {
+  picture img {
+    height: var(--hero-image-height-desktop);
+  }
+  main {
+    max-width: var(--card-width-desktop);
+    margin-inline: auto;
+    margin-block-start: var(--app-top-spacing-desktop);
+    padding: var(--spacing-5);
+    padding-block-end: var(--spacing-1);
+    border-radius: var(--border-radius);
+  }
+
+  .title img {
+    width: var(--star-icon-size-desktop);
+  }
+
+  .title h1 {
+    font-size: var(--font-size-large);
+  }
+  .faq-header {
+    padding-block: calc(var(--spacing-2) + 0.25rem);
+  }
+
+  .faq:first-of-type .faq-header {
+    padding-block-start: var(--spacing-4);
+  }
+
+  .faq-header h2 {
+    font-size: var(--font-size-medium);
+    width: 90%;
+  }
+
+  .faq-header img {
+    width: var(--spacing-2);
+  }
+
+  .faq p {
+    font-size: var(--font-size-base);
+  }
 }
