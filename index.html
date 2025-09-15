@@ -13,7 +13,14 @@
   </head>
   <body>
     <header>
-      <img src="/images/background-pattern-mobile.svg" alt="ilustration" />
+      <picture>
+        <source
+          media="(min-width: 48rem)"
+          srcset="/images/background-pattern-desktop.svg"
+          alt="ilustration"
+        />
+        <img src="/images/background-pattern-mobile.svg" alt="ilustration" />
+      </picture>
     </header>
     <main>
       <div class="title">
