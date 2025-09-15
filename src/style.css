@@ -13,6 +13,7 @@
   --purple-100: hsl(275, 100%, 97%);
   --purple-600: hsl(292, 16%, 49%);
   --purple-950: hsl(292, 42%, 14%);
+  --purple-hover: hsl(280, 89%, 56%);
 
   /* Typography */
   --font-family: "Work Sans", sans-serif;
@@ -138,6 +139,10 @@ main {
   font-weight: var(--font-weight-semibold);
   width: 80%;
   cursor: pointer;
+}
+
+.faq-header h2:hover {
+  color: var(--purple-hover);
 }
 
 .faq-header img {
