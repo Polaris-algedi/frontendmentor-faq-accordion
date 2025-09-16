@@ -45,6 +45,9 @@
   /* Container */
   --card-width-desktop: 37.5rem; /* 600px */
 
+  /* FAQ max height when open */
+  --faq-max-height: 12.5rem; /* 200px; */
+
   /* star icon */
   --star-icon-size-mobile: 1.25rem; /* 20px */
   --star-icon-size-desktop: 2.125rem; /* 34px */
@@ -151,14 +154,18 @@ main {
 }
 
 .faq p {
+  max-height: 0;
   font-size: var(--font-size-small);
   color: var(--purple-600);
   line-height: 1.5;
-  padding-block-end: var(--spacing-2);
+  padding-block-end: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
 }
 
-.hidden {
-  display: none;
+.faq p.open {
+  max-height: var(--faq-max-height);
+  padding-block-end: var(--spacing-2);
 }
 
 /* Styles for desktop */
