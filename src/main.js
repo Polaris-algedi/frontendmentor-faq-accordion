@@ -25,13 +25,13 @@ const toggle = (clickedHeader) => {
   const faqItem = clickedHeader.parentElement;
   const faqParagraph = faqItem.querySelector("p");
   const faqImage = clickedHeader.querySelector("img");
-  if (faqParagraph.classList.contains("hidden")) {
-    faqParagraph.classList.remove("hidden");
-    faqImage.src = "/images/icon-minus.svg";
-    clickedHeader.setAttribute("aria-expanded", "true");
-  } else {
-    faqParagraph.classList.add("hidden");
+  if (faqParagraph.classList.contains("open")) {
+    faqParagraph.classList.remove("open");
     faqImage.src = "/images/icon-plus.svg";
     clickedHeader.setAttribute("aria-expanded", "false");
+  } else {
+    faqParagraph.classList.add("open");
+    faqImage.src = "/images/icon-minus.svg";
+    clickedHeader.setAttribute("aria-expanded", "true");
   }
 };
